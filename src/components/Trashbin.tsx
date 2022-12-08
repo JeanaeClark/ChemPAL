@@ -16,11 +16,16 @@ interface ITEM {
 }
 function Trashbin(props: ContainerProps) {
     const { children } = props;
-    const { removefromScreen, x } = useContext(CardContext);
+    const {
+        removeElementFromScreen,
+        removeCompoundFromScreen: removeCompoundFromScreen
+    } = useContext(CardContext);
     const [, drop] = useDrop({
         accept: itemTypes.ELEMENT,
         drop: (item: ITEM) =>
-            item.ID < 50 ? removefromScreen(item.ID) : x(item.ID),
+            item.ID < 50
+                ? removeElementFromScreen(item.ID)
+                : removeCompoundFromScreen(item.ID),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })

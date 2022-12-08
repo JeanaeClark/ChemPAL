@@ -1,4 +1,3 @@
-//import { Element } from "./interfaces/Element";
 import { Compound } from "./interfaces/Compound";
 
 const SodiumChloride: Compound = {
