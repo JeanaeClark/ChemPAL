@@ -8,6 +8,6 @@ export interface Element {
     shown: boolean;
     top: number;
     left: number;
-    fact: string;
-    compounds: string[];
+    fact?: string;
+    compounds?: string[];
 }
