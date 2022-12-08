@@ -36,6 +36,14 @@ function Moddal({ temp }: { temp: Element }) {
                                 <strong>Fun Fact: </strong>
                                 {temp.fact}
                             </div>
+                            <div>
+                                <strong>
+                                    Common {temp.name} compounds are:
+                                </strong>
+                            </div>
+                            <div> 1. {temp.compounds[0]}</div>
+                            <div> 2. {temp.compounds[1]}</div>
+                            <div> 3. {temp.compounds[2]}</div>
                         </div>
                     </div>
                 </Modal.Body>
