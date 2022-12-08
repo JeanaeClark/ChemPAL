@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ChemPAL/static/css/main.3ce8a16d.css",
-    "main.js": "/ChemPAL/static/js/main.89ab5712.js",
+    "main.js": "/ChemPAL/static/js/main.a2059058.js",
     "static/js/787.4ef7427d.chunk.js": "/ChemPAL/static/js/787.4ef7427d.chunk.js",
     "static/media/logo.png": "/ChemPAL/static/media/logo.02705d99d9591e79ea17.png",
     "static/media/19 potassium.png": "/ChemPAL/static/media/19 potassium.6de4773c7510b6928acd.png",
@@ -14,15 +14,16 @@
     "static/media/52 tellurium.png": "/ChemPAL/static/media/52 tellurium.4ff3cfe75b775b4bbf62.png",
     "static/media/7nitrogen.png": "/ChemPAL/static/media/7nitrogen.d8b5e7b753363d0d0bae.png",
     "static/media/53 iodine.png": "/ChemPAL/static/media/53 iodine.2f55554da4de8cd0bab4.png",
+    "static/media/11 sodium.png": "/ChemPAL/static/media/11 sodium.610508fb4528553fe49c.png",
     "static/media/8 oxygen.png": "/ChemPAL/static/media/8 oxygen.25f28b6bd49946574ee2.png",
     "static/media/1 hydrogen.png": "/ChemPAL/static/media/1 hydrogen.926213a3c87f65d4379e.png",
     "index.html": "/ChemPAL/index.html",
     "main.3ce8a16d.css.map": "/ChemPAL/static/css/main.3ce8a16d.css.map",
-    "main.89ab5712.js.map": "/ChemPAL/static/js/main.89ab5712.js.map",
+    "main.a2059058.js.map": "/ChemPAL/static/js/main.a2059058.js.map",
     "787.4ef7427d.chunk.js.map": "/ChemPAL/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ce8a16d.css",
-    "static/js/main.89ab5712.js"
+    "static/js/main.a2059058.js"
   ]
 }
