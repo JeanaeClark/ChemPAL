@@ -70,7 +70,7 @@ const Silver: Element = {
     name: "Silver",
     id: 5,
     image: require("./images/47 silver.png"),
-    neededforCompound: ["Iodide", "Silver Iodide"],
+    neededforCompound: ["Iodine", "Silver Iodide"],
     chemAbr: "Ag",
     atomicNum: 47,
     shown: false,
@@ -149,7 +149,7 @@ const Cesium: Element = {
 };
 
 const Fluorine: Element = {
-    name: "Flourine",
+    name: "Fluorine",
     id: 11,
     image: require("./images/9 flourine.png"),
     chemAbr: "Fl",
