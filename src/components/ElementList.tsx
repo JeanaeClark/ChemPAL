@@ -133,8 +133,9 @@ function ElementList() {
             )[0];
         const p = { ...draggedElement };
         if (element.neededforCompound != undefined) {
-            if (p.name == element.neededforCompound[0]) {
-                const x = element.neededforCompound[1];
+            console.log("ooga");
+            if (element.neededforCompound[p.name]) {
+                const x = element.neededforCompound[p.name];
                 const foundCompound = compounds.filter(
                     (e: Compound) => e.name === x
                 )[0];

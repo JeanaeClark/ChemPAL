@@ -100,6 +100,16 @@ const SliconCarbide: Compound = {
     top: 118
 };
 
+const PotassiumIodide: Compound = {
+    name: "Potassium Iodide",
+    id: 61,
+    image: require("./images/7nitrogen.png"),
+    chemAbr: "KI",
+    shown: false,
+    left: 225,
+    top: 118
+};
+
 export const compounds = [
     SodiumChloride,
     PotassiumChloride,
@@ -110,5 +120,6 @@ export const compounds = [
     CesiumFlouride,
     CarbonMonoxide,
     LithiumFluoride,
-    SliconCarbide
+    SliconCarbide,
+    PotassiumIodide
 ];

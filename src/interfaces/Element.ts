@@ -4,7 +4,7 @@ export interface Element {
     image: string;
     chemAbr: string;
     atomicNum: number;
-    neededforCompound?: [key: string, value: string];
+    neededforCompound?: { [key: string]: string };
     shown: boolean;
     top: number;
     left: number;
