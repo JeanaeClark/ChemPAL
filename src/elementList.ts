@@ -70,7 +70,7 @@ const Silver: Element = {
     name: "Silver",
     id: 5,
     image: require("./images/47 silver.png"),
-    neededforCompound: ["Iodide", "Silver Iodide"],
+    neededforCompound: ["Iodine", "Silver Iodide"],
     chemAbr: "Ag",
     atomicNum: 47,
     shown: false,
