@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Element } from "../interfaces/Element";
+import { Compound } from "../interfaces/Compound";
 
 import "./Modal.css";
 
-function Moddal({ element }: { element: Element }) {
+function CompoundModal({ compound }: { compound: Compound }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -18,32 +18,20 @@ function Moddal({ element }: { element: Element }) {
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>
-                        Let{"'"}s Learn about {element.name}!
+                        Let{"'"}s Learn about {compound.name}!
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="row">
                         <div className="column">
-                            <img className="info-box" src={element.image} />
+                            <img className="info-box" src={compound.image} />
                         </div>
                         <div className="column">
-                            <h1> {element.name} </h1>
+                            <h1> {compound.name} </h1>
                             <div>
                                 <strong>Chemical Formula: </strong>
-                                {element.chemAbr}
+                                {compound.chemAbr}
                             </div>
-                            <div>
-                                <strong>Fun Fact: </strong>
-                                {element.fact}
-                            </div>
-                            <div>
-                                <strong>
-                                    Common {element.name} compounds are:
-                                </strong>
-                            </div>
-                            <div> 1. {element.compounds[0]}</div>
-                            <div> 2. {element.compounds[1]}</div>
-                            <div> 3. {element.compounds[2]}</div>
                         </div>
                     </div>
                 </Modal.Body>
@@ -53,4 +41,4 @@ function Moddal({ element }: { element: Element }) {
     );
 }
 
-export default Moddal;
+export default CompoundModal;

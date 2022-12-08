@@ -8,6 +8,7 @@ function CompoundObjectSidebar({
 }: {
     compound: Compound;
 }): JSX.Element {
+    // Returns the Compound Object that is seen on the left task bar
     return (
         <div>
             <img

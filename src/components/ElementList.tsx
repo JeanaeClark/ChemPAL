@@ -10,6 +10,7 @@ import { compounds } from "../compoundList";
 
 import "./ElementList.css";
 import Modal from "./Modal";
+import CompoundModal from "./CompoundModal";
 import HelpModal from "./HelpModal";
 import Container from "./Container";
 import { Button, Form } from "react-bootstrap";
@@ -23,11 +24,13 @@ const AlphabeticalAtZFuncAtZ = "1";
 const AlphabeticalAtZFuncZtA = "4";
 const ByAtomicNumFunc = "2";
 const ResetFunc = "3";
+const picHeight = 100;
+const picWidth = 100;
 
 export const CardContext = createContext({
     putInWorkSpace: (id: number, monitor: any) => {},
-    removefromScreen: (id: number) => {},
-    x: (id: number) => {}
+    removeElementFromScreen: (id: number) => {},
+    removeCompoundFromScreen: (id: number) => {}
 });
 
 function ElementList() {
@@ -89,7 +92,7 @@ function ElementList() {
                 <div key={element.name} className="elementcontainer">
                     <li>
                         {element.name + "             "}
-                        <Modal temp={element}></Modal>
+                        <Modal element={element}></Modal>
                     </li>
                     <ElementObject element={element} />
                 </div>
@@ -102,8 +105,8 @@ function ElementList() {
             <div>
                 <div key={compound.name} className="elementcontainer">
                     <li>
-                        {compound.name + "             "}
-                        {/* <Modal temp={compound}></Modal> */}
+                        {compound.name}
+                        <CompoundModal compound={compound}></CompoundModal>
                     </li>
                     <CompoundObjectSidebar compound={compound} />
                 </div>
@@ -123,10 +126,10 @@ function ElementList() {
             .filter((e) => e.id != element.id)
             .filter(
                 (e) =>
-                    element.top < e.top + 100 &&
-                    element.top + 100 > e.top &&
-                    element.left < e.left + 100 &&
-                    element.left + 100 > e.left
+                    element.top < e.top + picHeight &&
+                    element.top + picHeight > e.top &&
+                    element.left < e.left + picWidth &&
+                    element.left + picWidth > e.left
             )[0];
         const p = { ...draggedElement };
         if (element.neededforCompound != undefined) {
@@ -135,7 +138,7 @@ function ElementList() {
                 const foundCompound = compounds.filter(
                     (e: Compound) => e.name === x
                 )[0];
-                removefromScreen(p.id, element.id);
+                removeElementFromScreen(p.id, element.id);
                 addCompoundtoWorkspace(foundCompound, p);
             }
         }
@@ -194,7 +197,7 @@ function ElementList() {
         }
     }
 
-    function removefromScreen(id: number, id2?: number) {
+    function removeElementFromScreen(id: number, id2?: number) {
         let draggedElement = inWorkSpace.filter((e) => e.id != id);
         if (id2) {
             draggedElement = draggedElement.filter((e) => e.id != id2);
@@ -203,12 +206,18 @@ function ElementList() {
         addtoWorkSpace(draggedElement);
     }
 
-    function x(id: number) {
+    function removeCompoundFromScreen(id: number) {
         const draggedCompound = foundCompounds.filter((e) => e.id != id);
         setfoundCompounds(draggedCompound);
     }
     return (
-        <CardContext.Provider value={{ putInWorkSpace, removefromScreen, x }}>
+        <CardContext.Provider
+            value={{
+                putInWorkSpace,
+                removeElementFromScreen,
+                removeCompoundFromScreen
+            }}
+        >
             <div>
                 <div className="row-adj">
                     <div className="column-sidebar">
@@ -241,6 +250,16 @@ function ElementList() {
                         </p>
                         <ul className="scroll-bar">
                             {generateList(elementlist)}
+                            <strong className="Seperater">
+                                --------------------------
+                            </strong>
+                            <strong className="Seperater">
+                                Found Compounds <br />
+                            </strong>
+                            <strong className="Seperater">
+                                -------------------------
+                            </strong>
+                            <strong className="Seperater">--</strong>
                             {generatecompoundList(sidebarCompounds)}
                         </ul>
                     </div>
