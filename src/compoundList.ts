@@ -92,7 +92,7 @@ const LithiumFluoride: Compound = {
 };
 
 const SliconCarbide: Compound = {
-    name: "Slicon Carbide",
+    name: "Silicon Carbide",
     id: 60,
     image: require("./images/7nitrogen.png"),
     chemAbr: "SiC",

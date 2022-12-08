@@ -149,7 +149,7 @@ const Cesium: Element = {
 };
 
 const Fluorine: Element = {
-    name: "Flourine",
+    name: "Fluorine",
     id: 11,
     image: require("./images/9 flourine.png"),
     chemAbr: "Fl",
