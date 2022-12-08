@@ -7,8 +7,9 @@ const Nitrogen: Element = {
     chemAbr: "N",
     atomicNum: 7,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Nitrogen is odorless, tasteless, and colorless."
 };
 
 const Chlorine: Element = {
@@ -18,8 +19,9 @@ const Chlorine: Element = {
     chemAbr: "Cl",
     atomicNum: 17,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Nitrogen is odorless, tasteless, and colorless."
 };
 
 const Potassium: Element = {
@@ -29,8 +31,9 @@ const Potassium: Element = {
     chemAbr: "K",
     atomicNum: 19,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Potassium is the second lightest (least dense) metal after lithium."
 };
 
 const Hydrogen: Element = {
@@ -40,8 +43,9 @@ const Hydrogen: Element = {
     chemAbr: "H",
     atomicNum: 1,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Hydrogen is the most abundant element."
 };
 
 const Silver: Element = {
@@ -51,8 +55,9 @@ const Silver: Element = {
     chemAbr: "Ag",
     atomicNum: 47,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Silver can make it rain."
 };
 
 const Iodine: Element = {
@@ -62,8 +67,9 @@ const Iodine: Element = {
     chemAbr: "I",
     atomicNum: 53,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Iodine was used to make the first photographs."
 };
 
 const Aluminum: Element = {
@@ -73,8 +79,9 @@ const Aluminum: Element = {
     chemAbr: "Al",
     atomicNum: 13,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "It doesn't rust."
 };
 
 const Cadmium: Element = {
@@ -84,8 +91,9 @@ const Cadmium: Element = {
     chemAbr: "Cd",
     atomicNum: 48,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Cadmium is used in many products, including batteries, plastics, and in cigarette smoke."
 };
 
 const Tellurium: Element = {
@@ -95,8 +103,9 @@ const Tellurium: Element = {
     chemAbr: "Te",
     atomicNum: 52,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Tellurium is one of the rarest elements on Earth, but plentiful in space."
 };
 
 const Cesium: Element = {
@@ -106,8 +115,9 @@ const Cesium: Element = {
     chemAbr: "Cs",
     atomicNum: 55,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Cesium is incredibly accurate at timekeeping and is used in atomic clocks."
 };
 
 const Fluorine: Element = {
@@ -117,8 +127,9 @@ const Fluorine: Element = {
     chemAbr: "Fl",
     atomicNum: 9,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: " Fluorine is the only element which will shape compounds with noble gasses xenon, krypton, and radon."
 };
 
 const Carbon: Element = {
@@ -128,8 +139,9 @@ const Carbon: Element = {
     chemAbr: "C",
     atomicNum: 6,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "ALMOST A FIFTH OF YOUR BODY IS CARBON."
 };
 
 const Oxygen: Element = {
@@ -139,8 +151,9 @@ const Oxygen: Element = {
     chemAbr: "O",
     atomicNum: 8,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Oxygen makes up around 21% of the Earth's atmosphere."
 };
 
 const Lithium: Element = {
@@ -150,8 +163,9 @@ const Lithium: Element = {
     chemAbr: "Li",
     atomicNum: 3,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Although it is a metal, it is soft enough to cut with a knife."
 };
 
 const Silicon: Element = {
@@ -161,8 +175,9 @@ const Silicon: Element = {
     chemAbr: "Si",
     atomicNum: 14,
     shown: false,
-    left: 225,
-    top: 118
+    left: 50,
+    top: 50,
+    fact: "Silicon is widely used in computer chips and solar cells."
 };
 
 export const elements = [

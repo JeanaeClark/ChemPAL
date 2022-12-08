@@ -32,6 +32,10 @@ function Moddal({ temp }: { temp: Element }) {
                                 <strong>Chemical Formula: </strong>
                                 {temp.chemAbr}
                             </div>
+                            <div>
+                                <strong>Fun Fact: </strong>
+                                {temp.fact}
+                            </div>
                         </div>
                     </div>
                 </Modal.Body>
