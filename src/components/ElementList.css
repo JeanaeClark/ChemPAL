@@ -19,3 +19,9 @@ p {
     margin-right: auto;
     width: 300px;
 }
+
+.score {
+    text-align: left;
+    font-size: 10vh;
+    padding: 10;
+}
