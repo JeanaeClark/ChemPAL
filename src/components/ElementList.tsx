@@ -10,11 +10,14 @@ import { compounds } from "../compoundList";
 
 import "./ElementList.css";
 import Modal from "./Modal";
+import HelpModal from "./HelpModal";
 import Container from "./Container";
 import { Button, Form } from "react-bootstrap";
 import Trashbin from "./Trashbin";
 import { XYCoord } from "react-dnd";
 import { Compound } from "../interfaces/Compound";
+import CompoundObject from "./CompoundObject";
+import CompoundObjectSidebar from "./CompoundObjectSidebar";
 
 const AlphabeticalAtZFuncAtZ = "1";
 const AlphabeticalAtZFuncZtA = "4";
@@ -23,14 +26,18 @@ const ResetFunc = "3";
 
 export const CardContext = createContext({
     putInWorkSpace: (id: number, monitor: any) => {},
-    removefromScreen: (id: number) => {}
+    removefromScreen: (id: number) => {},
+    x: (id: number) => {}
 });
 
 function ElementList() {
     const [inWorkSpace, addtoWorkSpace] = useState<Element[]>([]);
-    const [elementlist, setProplist] = useState<Element[]>(elements);
+    const [elementlist, setElementlist] = useState<Element[]>(elements);
     const [numRep, setFunction] = useState<string>();
     const [search, changeSearch] = useState<string>("");
+    const [foundCompounds, setfoundCompounds] = useState<Compound[]>([]);
+    const [sidebarCompounds, setSidebarCompounds] =
+        useState<Compound[]>(compounds);
 
     function updateFunction(event: React.ChangeEvent<HTMLSelectElement>) {
         console.log(event.target.value);
@@ -49,33 +56,35 @@ function ElementList() {
     function Filter() {
         const foundElement = elements.filter((e) => e.name == search);
         if (search == "") {
-            setProplist(elements);
+            setElementlist(elements);
         } else {
-            setProplist(foundElement);
+            setElementlist(foundElement);
         }
     }
 
     function AlphabeticalAtZ() {
         const x = elementlist.map((element: Element): Element => element);
-        setProplist(x.sort((a, b) => a.name.localeCompare(b.name)));
+        setElementlist(x.sort((a, b) => a.name.localeCompare(b.name)));
     }
 
     function AlphabeticalAtZZtA() {
         const x = elementlist.map((element: Element): Element => element);
-        setProplist(x.sort((a, b) => a.name.localeCompare(b.name)).reverse());
+        setElementlist(
+            x.sort((a, b) => a.name.localeCompare(b.name)).reverse()
+        );
     }
 
     function ByAtomicNum() {
         const x = elementlist.map((element: Element): Element => element);
-        setProplist(x.sort((a, b) => a.atomicNum - b.atomicNum));
+        setElementlist(x.sort((a, b) => a.atomicNum - b.atomicNum));
     }
 
     function Reset() {
-        setProplist(elements);
+        setElementlist(elements);
     }
 
-    function generateList(element: Element[]) {
-        return element.map((element) => (
+    function generateList(elements: Element[]) {
+        return elements.map((element) => (
             <div>
                 <div key={element.name} className="elementcontainer">
                     <li>
@@ -87,11 +96,26 @@ function ElementList() {
             </div>
         ));
     }
+    function generatecompoundList(compounds: Compound[]) {
+        const shownCompounds = compounds.filter((e) => e.shown == true);
+        return shownCompounds.map((compound) => (
+            <div>
+                <div key={compound.name} className="elementcontainer">
+                    <li>
+                        {compound.name + "             "}
+                        {/* <Modal temp={compound}></Modal> */}
+                    </li>
+                    <CompoundObjectSidebar compound={compound} />
+                </div>
+            </div>
+        ));
+    }
 
     function addCompoundtoWorkspace(compound: Compound, p: Element) {
-        // compound.left = p.left;
-        // compound.top = p.top;
-        //add compound to left side
+        compound.left = p.left;
+        compound.top = p.top;
+        compound.shown = true;
+        setfoundCompounds(foundCompounds.concat(compound));
     }
 
     function combineElements(element: Element) {
@@ -111,32 +135,59 @@ function ElementList() {
                 const foundCompound = compounds.filter(
                     (e: Compound) => e.name === x
                 )[0];
-                console.log(foundCompound);
                 removefromScreen(p.id, element.id);
                 addCompoundtoWorkspace(foundCompound, p);
-                //removefromScreen(element.id);
             }
         }
     }
 
     function moveElement(id: number, left: number, top: number) {
         const draggedElement = inWorkSpace.filter((e) => e.id === id)[0];
-        draggedElement.left = left;
-        draggedElement.top = top;
-        combineElements(draggedElement);
+        if (draggedElement == undefined) {
+            const draggedCompound = foundCompounds.filter(
+                (e) => e.id === id
+            )[0];
+            draggedCompound.left = left;
+            draggedCompound.top = top;
+        } else {
+            draggedElement.left = left;
+            draggedElement.top = top;
+            combineElements(draggedElement);
+        }
+    }
+
+    function isElement(obj: Element | Compound): boolean {
+        if (obj.id > 50) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     function putInWorkSpace(id: number, monitor: any) {
         const draggedElement = elementlist.filter((e) => e.id === id)[0];
         const p = { ...draggedElement };
         if (draggedElement == undefined) {
-            const draggedElement = inWorkSpace.filter((e, i) => e.id === id)[0];
-            const p = { ...draggedElement };
-            const delta = monitor.getDifferenceFromInitialOffset() as XYCoord;
-            const left = Math.round(p.left + delta.x);
-            const top = Math.round(p.top + delta.y);
-            moveElement(p.id, left, top);
-        } else if (draggedElement.shown == false) {
+            const draggedElement = inWorkSpace.filter((e) => e.id === id)[0];
+            if (draggedElement == undefined) {
+                console.log("iscompound");
+                const draggedCompound = foundCompounds.filter(
+                    (e) => e.id === id
+                )[0];
+                const delta =
+                    monitor.getDifferenceFromInitialOffset() as XYCoord;
+                const left = Math.round(draggedCompound.left + delta.x);
+                const top = Math.round(draggedCompound.top + delta.y);
+                moveElement(draggedCompound.id, left, top);
+            } else {
+                const p = { ...draggedElement };
+                const delta =
+                    monitor.getDifferenceFromInitialOffset() as XYCoord;
+                const left = Math.round(p.left + delta.x);
+                const top = Math.round(p.top + delta.y);
+                moveElement(p.id, left, top);
+            }
+        } else if (draggedElement.shown == false && isElement(draggedElement)) {
             p.shown = true;
             p.id = Math.random();
             addtoWorkSpace(inWorkSpace.concat(p));
@@ -144,14 +195,20 @@ function ElementList() {
     }
 
     function removefromScreen(id: number, id2?: number) {
-        let draggedElement = inWorkSpace.filter((e, i) => e.id != id);
+        let draggedElement = inWorkSpace.filter((e) => e.id != id);
         if (id2) {
-            draggedElement = draggedElement.filter((e, i) => e.id != id2);
+            draggedElement = draggedElement.filter((e) => e.id != id2);
         }
+        console.log(draggedElement);
         addtoWorkSpace(draggedElement);
     }
+
+    function x(id: number) {
+        const draggedCompound = foundCompounds.filter((e) => e.id != id);
+        setfoundCompounds(draggedCompound);
+    }
     return (
-        <CardContext.Provider value={{ putInWorkSpace, removefromScreen }}>
+        <CardContext.Provider value={{ putInWorkSpace, removefromScreen, x }}>
             <div>
                 <div className="row-adj">
                     <div className="column-sidebar">
@@ -184,6 +241,7 @@ function ElementList() {
                         </p>
                         <ul className="scroll-bar">
                             {generateList(elementlist)}
+                            {generatecompoundList(sidebarCompounds)}
                         </ul>
                     </div>
                     <div className="column-center">
@@ -193,9 +251,21 @@ function ElementList() {
                         />
                         <div>
                             <Container>
-                                {inWorkSpace.map((e) => (
-                                    <ElementObject element={e} />
-                                ))}
+                                <p className="score">
+                                    {compounds
+                                        .filter((e) => e.shown == true)
+                                        .length.toString() +
+                                        "/" +
+                                        compounds.length.toString()}
+                                    <HelpModal></HelpModal>
+                                </p>
+                                {inWorkSpace
+                                    .map((e) => <ElementObject element={e} />)
+                                    .concat(
+                                        foundCompounds.map((e) => (
+                                            <CompoundObject compound={e} />
+                                        ))
+                                    )}
                             </Container>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ function Container(props: ContainerProps) {
     const { putInWorkSpace } = useContext(CardContext);
     const [, drop] = useDrop({
         accept: itemTypes.ELEMENT,
-        drop: (item: ITEM, monitor) => putInWorkSpace(item.ID, monitor), //ternary
+        drop: (item: ITEM, monitor) => putInWorkSpace(item.ID, monitor),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })

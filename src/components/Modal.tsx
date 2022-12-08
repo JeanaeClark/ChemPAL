@@ -13,7 +13,7 @@ function Moddal({ temp }: { temp: Element }) {
 
     return (
         <>
-            <Button className="HelpButton" onClick={handleShow}></Button>
+            <Button className="InfoButton" onClick={handleShow}></Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

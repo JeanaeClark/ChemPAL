@@ -1,0 +1,7 @@
+.HelpButton {
+    height: 40px;
+    width: 120px;
+    background-color: rgb(255, 0, 43);
+    border-color: red;
+    float: right;
+}
