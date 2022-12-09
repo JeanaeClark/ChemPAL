@@ -167,19 +167,12 @@ function ElementList() {
         }
     }
 
-    function sdfda(e: any) {
-        console.log(e.clientX);
-        console.log(e.clientY);
-        window.removeEventListener("dragend", sdfda);
-    }
-
     function putInWorkSpace(id: number, monitor: any) {
         const draggedElement = elementlist.filter((e) => e.id === id)[0];
         const p = { ...draggedElement };
         if (draggedElement == undefined) {
             const draggedElement = inWorkSpace.filter((e) => e.id === id)[0];
             if (draggedElement == undefined) {
-                console.log("iscompound");
                 const draggedCompound = foundCompounds.filter(
                     (e) => e.id === id
                 )[0];
@@ -197,10 +190,6 @@ function ElementList() {
                 moveElement(p.id, left, top);
             }
         } else if (draggedElement.shown == false && isElement(draggedElement)) {
-            console.log("fdaf");
-            window.addEventListener("dragend", sdfda);
-            // p.left = e.clientY;
-            // p.right = e.clientX;
             p.shown = true;
             p.id = Math.random();
             addtoWorkSpace(inWorkSpace.concat(p));
@@ -212,7 +201,6 @@ function ElementList() {
         if (id2) {
             draggedElement = draggedElement.filter((e) => e.id != id2);
         }
-        console.log(draggedElement);
         addtoWorkSpace(draggedElement);
     }
 
@@ -220,6 +208,7 @@ function ElementList() {
         const draggedCompound = foundCompounds.filter((e) => e.id != id);
         setfoundCompounds(draggedCompound);
     }
+
     return (
         <CardContext.Provider
             value={{

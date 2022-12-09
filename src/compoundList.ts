@@ -3,7 +3,7 @@ import { Compound } from "./interfaces/Compound";
 const SodiumChloride: Compound = {
     name: "Sodium Chloride",
     id: 51,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Sodium Chloride.png"),
     chemAbr: "NaCl",
     shown: false,
     left: 225,
@@ -13,7 +13,7 @@ const SodiumChloride: Compound = {
 const PotassiumChloride: Compound = {
     name: "Potassium Chloride",
     id: 52,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Potassium Chloride.png"),
     chemAbr: "KCl",
     shown: false,
     left: 225,
@@ -23,7 +23,7 @@ const PotassiumChloride: Compound = {
 const HydrochloricAcid: Compound = {
     name: "Hydrochloric Acid",
     id: 53,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Hydrochloric Acid.png"),
     chemAbr: "HCl",
     shown: false,
     left: 225,
@@ -33,7 +33,7 @@ const HydrochloricAcid: Compound = {
 const SilverIodide: Compound = {
     name: "Silver Iodide",
     id: 54,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Silver Iodide.png"),
     chemAbr: "Agl",
     shown: false,
     left: 225,
@@ -43,7 +43,7 @@ const SilverIodide: Compound = {
 const AluminumNitride: Compound = {
     name: "Aluminum Nitride",
     id: 55,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Aluminum Nitride.png"),
     chemAbr: "AlN",
     shown: false,
     left: 225,
@@ -53,17 +53,17 @@ const AluminumNitride: Compound = {
 const CadmiumTelluride: Compound = {
     name: "Cadmium Telluride",
     id: 56,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Cadmium Telluride.png"),
     chemAbr: "CdTe",
     shown: false,
     left: 225,
     top: 118
 };
 
-const CesiumFlouride: Compound = {
-    name: "Cesium Flouride",
+const CesiumFluoride: Compound = {
+    name: "Cesium Fluoride",
     id: 57,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Cesium Fluoride.png"),
     chemAbr: "CsF",
     shown: false,
     left: 225,
@@ -73,7 +73,7 @@ const CesiumFlouride: Compound = {
 const CarbonMonoxide: Compound = {
     name: "Carbon Monoxide",
     id: 58,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Carbon Monoxide.png"),
     chemAbr: "CO",
     shown: false,
     left: 225,
@@ -83,7 +83,7 @@ const CarbonMonoxide: Compound = {
 const LithiumFluoride: Compound = {
     name: "Lithium Fluoride",
     id: 59,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Lithium Fluoride.png"),
     chemAbr: "LiF",
     shown: false,
     left: 225,
@@ -93,7 +93,7 @@ const LithiumFluoride: Compound = {
 const SliconCarbide: Compound = {
     name: "Silicon Carbide",
     id: 60,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Silicon Carbide.png"),
     chemAbr: "SiC",
     shown: false,
     left: 225,
@@ -103,7 +103,7 @@ const SliconCarbide: Compound = {
 const PotassiumIodide: Compound = {
     name: "Potassium Iodide",
     id: 61,
-    image: require("./images/7nitrogen.png"),
+    image: require("./images/Potassium Iodide.png"),
     chemAbr: "KI",
     shown: false,
     left: 225,
@@ -117,7 +117,7 @@ export const compounds = [
     SilverIodide,
     AluminumNitride,
     CadmiumTelluride,
-    CesiumFlouride,
+    CesiumFluoride,
     CarbonMonoxide,
     LithiumFluoride,
     SliconCarbide,
