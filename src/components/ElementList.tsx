@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { createContext, useCallback, useState } from "react";
+import React, { createContext, useCallback, useEffect, useState } from "react";
 import { Element } from "../interfaces/Element";
 import { elements } from "../elementList";
 import ElementObject from "./ElementObject";
@@ -39,8 +39,7 @@ function ElementList() {
     const [numRep, setFunction] = useState<string>();
     const [search, changeSearch] = useState<string>("");
     const [foundCompounds, setfoundCompounds] = useState<Compound[]>([]);
-    const [sidebarCompounds, setSidebarCompounds] =
-        useState<Compound[]>(compounds);
+    const [sidebarCompounds] = useState<Compound[]>(compounds);
 
     function updateFunction(event: React.ChangeEvent<HTMLSelectElement>) {
         console.log(event.target.value);
@@ -90,25 +89,26 @@ function ElementList() {
         return elements.map((element) => (
             <div>
                 <div key={element.name} className="elementcontainer">
+                    <ElementObject element={element} />
                     <li>
                         {element.name + "             "}
                         <Modal element={element}></Modal>
                     </li>
-                    <ElementObject element={element} />
                 </div>
             </div>
         ));
     }
+
     function generatecompoundList(compounds: Compound[]) {
         const shownCompounds = compounds.filter((e) => e.shown == true);
         return shownCompounds.map((compound) => (
             <div>
                 <div key={compound.name} className="elementcontainer">
+                    <CompoundObjectSidebar compound={compound} />
                     <li>
                         {compound.name}
                         <CompoundModal compound={compound}></CompoundModal>
                     </li>
-                    <CompoundObjectSidebar compound={compound} />
                 </div>
             </div>
         ));
@@ -133,7 +133,6 @@ function ElementList() {
             )[0];
         const p = { ...draggedElement };
         if (element.neededforCompound != undefined) {
-            console.log("ooga");
             if (element.neededforCompound[p.name]) {
                 const x = element.neededforCompound[p.name];
                 const foundCompound = compounds.filter(
@@ -168,6 +167,12 @@ function ElementList() {
         }
     }
 
+    function sdfda(e: any) {
+        console.log(e.clientX);
+        console.log(e.clientY);
+        window.removeEventListener("dragend", sdfda);
+    }
+
     function putInWorkSpace(id: number, monitor: any) {
         const draggedElement = elementlist.filter((e) => e.id === id)[0];
         const p = { ...draggedElement };
@@ -192,6 +197,10 @@ function ElementList() {
                 moveElement(p.id, left, top);
             }
         } else if (draggedElement.shown == false && isElement(draggedElement)) {
+            console.log("fdaf");
+            window.addEventListener("dragend", sdfda);
+            // p.left = e.clientY;
+            // p.right = e.clientX;
             p.shown = true;
             p.id = Math.random();
             addtoWorkSpace(inWorkSpace.concat(p));
@@ -223,7 +232,7 @@ function ElementList() {
                 <div className="row-adj">
                     <div className="column-sidebar">
                         <p>
-                            <strong> Element List</strong>
+                            <strong>Element List</strong>
                         </p>
                         <p>
                             <Form.Group controlId="Sorting/Filtering">
@@ -253,6 +262,7 @@ function ElementList() {
                             {generateList(elementlist)}
                             <strong className="Seperater">
                                 --------------------------
+                                <br />
                             </strong>
                             <strong className="Seperater">
                                 Found Compounds <br />
