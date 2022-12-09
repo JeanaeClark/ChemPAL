@@ -11,7 +11,7 @@ const Sodium: Element = {
     left: 269,
     top: 240,
     fact: "Nitrogen is odorless, tasteless, and colorless.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Table Salt(NaCl)", "Soda Ash", "Baking Soda"]
 };
 const Nitrogen: Element = {
     name: "Nitrogen",
@@ -42,7 +42,7 @@ const Chlorine: Element = {
     left: 269,
     top: 240,
     fact: "Nitrogen is odorless, tasteless, and colorless.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Table Salt", "Chloroform", "Cyanogen chloride"]
 };
 
 const Potassium: Element = {
@@ -59,7 +59,7 @@ const Potassium: Element = {
     left: 269,
     top: 240,
     fact: "Potassium is the second lightest (least dense) metal after lithium.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Potassium Chloride", "Potassium Hydroxide", "Potash"]
 };
 
 const Hydrogen: Element = {
@@ -75,7 +75,7 @@ const Hydrogen: Element = {
     left: 269,
     top: 240,
     fact: "Hydrogen is the most abundant element.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Water", "Hydroxides", "Methane"]
 };
 
 const Silver: Element = {
@@ -89,7 +89,7 @@ const Silver: Element = {
     left: 269,
     top: 240,
     fact: "Silver can make it rain.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Silver Chloride", "Silver Bromide", "Silver iodide"]
 };
 
 const Iodine: Element = {
@@ -106,7 +106,7 @@ const Iodine: Element = {
     left: 269,
     top: 240,
     fact: "Iodine was used to make the first photographs.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["sodium iodide", "potassium iodide", "iodates"]
 };
 
 const Aluminum: Element = {
@@ -120,7 +120,7 @@ const Aluminum: Element = {
     left: 269,
     top: 240,
     fact: "It doesn't rust.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Aluminium Oxide", "Aluminium Sulfate", "Aluminium Nitrite"]
 };
 
 const Cadmium: Element = {
@@ -134,7 +134,7 @@ const Cadmium: Element = {
     left: 269,
     top: 240,
     fact: "Cadmium is used in many products, including batteries, plastics, and in cigarette smoke.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Cadmium Sulfate", "Cadmium Carbonate", "Cadmium lithopone"]
 };
 
 const Tellurium: Element = {
@@ -148,7 +148,11 @@ const Tellurium: Element = {
     left: 269,
     top: 242,
     fact: "Tellurium is one of the rarest elements on Earth, but plentiful in space.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: [
+        "Tellorous acid",
+        "Tellurium tetrachloride",
+        "Tellurium monoxide"
+    ]
 };
 
 const Cesium: Element = {
@@ -162,7 +166,7 @@ const Cesium: Element = {
     left: 269,
     top: 240,
     fact: "Cesium is incredibly accurate at timekeeping and is used in atomic clocks.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Cesium Cloride", "Cesium nitrate", "Cesium "]
 };
 
 const Fluorine: Element = {
@@ -179,7 +183,7 @@ const Fluorine: Element = {
     left: 269,
     top: 240,
     fact: " Fluorine is the only element which will shape compounds with noble gasses xenon, krypton, and radon.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Calcium Fluoride", "Hydrogen Fluoride", "Sodium Fluoride"]
 };
 
 const Carbon: Element = {
@@ -196,7 +200,7 @@ const Carbon: Element = {
     left: 269,
     top: 240,
     fact: "ALMOST A FIFTH OF YOUR BODY IS CARBON.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Carbon monoxide", "Carbon disulfide", "Choloroform"]
 };
 
 const Oxygen: Element = {
@@ -212,7 +216,7 @@ const Oxygen: Element = {
     left: 269,
     top: 240,
     fact: "Oxygen makes up around 21% of the Earth's atmosphere.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Water", "Alcohols", "Carbonyls"]
 };
 
 const Lithium: Element = {
@@ -226,7 +230,7 @@ const Lithium: Element = {
     left: 269,
     top: 240,
     fact: "Although it is a metal, it is soft enough to cut with a knife.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Lithium Chloride", "Graphite", "Lithium Battery"]
 };
 
 const Silicon: Element = {
@@ -240,7 +244,7 @@ const Silicon: Element = {
     left: 269,
     top: 240,
     fact: "Silicon is widely used in computer chips and solar cells.",
-    compounds: ["Ammonia", "Nitrate", "Nitrous Oxide"]
+    compounds: ["Silica", "Quartz", "Tridymite"]
 };
 
 export const elements = [
