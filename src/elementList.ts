@@ -155,7 +155,7 @@ const Cesium: Element = {
     name: "Cesium",
     id: 10,
     image: require("./images/55 cesium.png"),
-    neededforCompound: { Fluorine: "Cesium Flouride" },
+    neededforCompound: { Fluorine: "Cesium Fluoride" },
     chemAbr: "Cs",
     atomicNum: 55,
     shown: false,
@@ -170,7 +170,7 @@ const Fluorine: Element = {
     id: 11,
     image: require("./images/9 flourine.png"),
     neededforCompound: {
-        Cesium: "Cesium Flouride",
+        Cesium: "Cesium Fluoride",
         Lithium: "Lithium Fluoride"
     },
     chemAbr: "Fl",
