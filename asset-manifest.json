@@ -1,11 +1,22 @@
 {
   "files": {
     "main.css": "/ChemPAL/static/css/main.e6e7e907.css",
-    "main.js": "/ChemPAL/static/js/main.374b0be9.js",
+    "main.js": "/ChemPAL/static/js/main.43604c23.js",
     "static/js/787.4ef7427d.chunk.js": "/ChemPAL/static/js/787.4ef7427d.chunk.js",
     "static/media/logo.png": "/ChemPAL/static/media/logo.02705d99d9591e79ea17.png",
+    "static/media/Potassium Iodide.png": "/ChemPAL/static/media/Potassium Iodide.4a6ab05acc9b5f6dc39f.png",
+    "static/media/Potassium Chloride.png": "/ChemPAL/static/media/Potassium Chloride.945b303d5ec9c1ccaa0e.png",
+    "static/media/Sodium Chloride.png": "/ChemPAL/static/media/Sodium Chloride.b2fb72ec573fdc29b299.png",
+    "static/media/Silver Iodide.png": "/ChemPAL/static/media/Silver Iodide.bec29982cba769bb73eb.png",
+    "static/media/Lithium Fluoride.png": "/ChemPAL/static/media/Lithium Fluoride.3d37e9cb9d4080424910.png",
     "static/media/19 potassium.png": "/ChemPAL/static/media/19 potassium.6de4773c7510b6928acd.png",
     "static/media/47 silver.png": "/ChemPAL/static/media/47 silver.ab7ec0af4cd3f3cfd642.png",
+    "static/media/Silicon Carbide.png": "/ChemPAL/static/media/Silicon Carbide.f8083077b29a17eba2be.png",
+    "static/media/Aluminum Nitride.png": "/ChemPAL/static/media/Aluminum Nitride.09fbdd491c324cd6e50c.png",
+    "static/media/Carbon Monoxide.png": "/ChemPAL/static/media/Carbon Monoxide.927cbbbd7d26adfd2e44.png",
+    "static/media/Hydrochloric Acid.png": "/ChemPAL/static/media/Hydrochloric Acid.b883f06a724e58a075f0.png",
+    "static/media/Cadmium Telluride.png": "/ChemPAL/static/media/Cadmium Telluride.de005b36bd7cde41cd31.png",
+    "static/media/Cesium Fluoride.png": "/ChemPAL/static/media/Cesium Fluoride.ece665682f4802dfe24d.png",
     "static/media/17 chlorine.png": "/ChemPAL/static/media/17 chlorine.6e02875950935ca8288c.png",
     "static/media/6 carbon.png": "/ChemPAL/static/media/6 carbon.dfca6d9f9ae306ce4514.png",
     "static/media/13 aluminum.png": "/ChemPAL/static/media/13 aluminum.fc2c0f84fca18fd83fb2.png",
@@ -19,11 +30,11 @@
     "static/media/1 hydrogen.png": "/ChemPAL/static/media/1 hydrogen.926213a3c87f65d4379e.png",
     "index.html": "/ChemPAL/index.html",
     "main.e6e7e907.css.map": "/ChemPAL/static/css/main.e6e7e907.css.map",
-    "main.374b0be9.js.map": "/ChemPAL/static/js/main.374b0be9.js.map",
+    "main.43604c23.js.map": "/ChemPAL/static/js/main.43604c23.js.map",
     "787.4ef7427d.chunk.js.map": "/ChemPAL/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6e7e907.css",
-    "static/js/main.374b0be9.js"
+    "static/js/main.43604c23.js"
   ]
 }
